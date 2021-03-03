@@ -1,9 +1,16 @@
 
-### Partial report screenshot
+#### Partial report screenshot
 
 ![Report Screenshot](screenshot.png "Report Screenshot")
 
-### Options supported
+## Quickstart
+
+`get_insta_insights.py --page-id=124567890123 --token=098754321234567890`
+
+- Page ID and Token must be provided either as option or environment variable values. 
+- If both are provided options will be preferred.
+
+#### Options supported
 
 | Short options | Long options | Environment variables |
 |---------------|--------------|-----------------------|
@@ -12,9 +19,10 @@
 | | --page-id | FB_PAGE_ID|
 | | --token   | FB_TOKEN  |
 
-## Quickstart
 
-`get_insta_insights.py --page-id=124567890123 --token=098754321234567890`
+#### Python version
 
-- Page ID and Token must be provided either as option or environment variable values. 
-- If both are provided options will be preferred.
+- \>= 3.6
+
+#### Packages needed
+- numpy
