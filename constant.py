@@ -1,4 +1,3 @@
-ACCESS_TOKEN_FILENAME = '.access_token.txt'
 GRAPH_ENDPOINT = 'https://graph.facebook.com/v10.0/'
 INSIGHTS_CSV = 'insta_insights.csv'
 HTML_FILE = 'index.html'

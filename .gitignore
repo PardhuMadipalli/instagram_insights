@@ -10,6 +10,7 @@ insta_insights.csv
 
 # HTML
 index.html
+style.css
 
 build/
 dist/

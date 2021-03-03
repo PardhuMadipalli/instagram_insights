@@ -1,7 +1,8 @@
 import constant
 import os
+import pkgutil
+import pkg_resources
 import shutil
-
 
 def get_html_file():
     return os.getcwd() + "/index.html"
@@ -12,10 +13,11 @@ def get_css_file():
 
 
 def create_html():
-    shutil.copy(constant.HTML_TEMPLATE, get_html_file())
     try:
-        shutil.copy(constant.CSS_FILE, get_css_file())
-    except:
+        shutil.copy(pkg_resources.resource_filename(__name__, "data/" + constant.HTML_TEMPLATE), get_html_file())
+        shutil.copy(pkg_resources.resource_filename(__name__, "data/" + constant.CSS_FILE), get_css_file())
+    except Exception as ex:
+        print("Warning: Exception while copying HTML or CSS files." + str(ex))
         pass
 
 
