@@ -5,10 +5,14 @@
 
 ## Quickstart
 
-`get_insta_insights.py --page-id=124567890123 --token=098754321234567890`
+1. Install the package using:<br>
+`pip install instagram-insights`
 
-- Page ID and Token must be provided either as option or environment variable values. 
-- If both are provided options will be preferred.
+2. Run the python scripts using:<br>
+`insta-insights --page-id=124567890123 --token=098754321234567890`
+
+- Page ID and Token must be provided either as options or environment variable values. 
+- If both options and env variables are provided options will be preferred.
 
 #### Options supported
 

@@ -14,7 +14,26 @@ options = "mh"
 long_options = ["machine-learning", "help", "page-id=", "token="]
 
 
+def usage():
+    print(f"""usage:
+
+insta-insights --page-id=<page-id> --token=<token>
+
+Entering page ID and token everytime when insta-insights is invoked can be avoided by setting them as env variables.
+    
+Environment variables supported:
+FB_TOKEN
+FB_PAGE_ID
+
+Read more at: https://github.com/PardhuMadipalli/instagram-insights#quickstart
+""")
+
+
 def main(token, page_id):
+    if token is None or page_id is None:
+        usage()
+        sys.exit(1)
+
     instagram_data.get_insights(token, page_id)
 
     htmlutils.create_html()
@@ -31,8 +50,7 @@ if __name__ == "__main__":
         token, page_id = None, None
         for currentArgument, currentValue in arguments:
             if currentArgument in ["-h", "--help"]:
-                with open('README', 'r') as readme:
-                    print(readme.read())
+                usage()
                 sys.exit(0)
             if currentArgument in ["-m", "--machine-learning"]:
                 raise RuntimeError('Machine learning is not supported yet. Use -h for help.')
