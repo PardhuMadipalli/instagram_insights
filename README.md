@@ -1,3 +1,4 @@
+![](https://github.com/PardhuMadipalli/instagram-insights/workflows/Publish%20PyPi%20Package/badge.svg)
 
 #### Partial report screenshot
 
