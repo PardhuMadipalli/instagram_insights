@@ -19,6 +19,7 @@ jobs:
           python-version: 3.7
       - name: Generate coverage report
         run: |
+          pip install -r requirements-test.txt
           coverage run --source=insights,instagram,get_insta_insights -m unittest tests/tests.py
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1

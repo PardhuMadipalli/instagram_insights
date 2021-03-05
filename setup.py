@@ -25,6 +25,6 @@ setuptools.setup(
     data_files=[('.', ['screenshot.png', 'README.md'])],
     py_modules = ['constant', 'setup', 'get_insta_insights', 'commons'],
     python_requires=">=3.7",
-    install_requires=['numpy', 'pandas'],
+    install_requires=['numpy', 'pandas', 'requests', 'matplotlib'],
     entry_points={"console_scripts": ["insta-insights=get_insta_insights:main"]},
 )
