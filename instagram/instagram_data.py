@@ -16,9 +16,9 @@ class Instapost:
         self.tags = self._get_hash_tags()
         self.hour = self._get_hour()
 
-    def print_post(self):
-        print(self.id, end=' ')
-        print(*self.tags, sep=' ')
+    # def print_post(self):
+    #     print(self.id, end=' ')
+    #     print(*self.tags, sep=' ')
 
     def _get_hash_tags(self):
         return [tag[1:] for tag in re.findall("[#]\w+", self._caption)]
@@ -39,7 +39,6 @@ def get_insights(token, page_id):
         insights_resp = get([post_id, 'insights'], token, query_params={'metric': 'impressions,engagement,reach'})
         metadata_resp = get([post_id], token, query_params={'fields': 'caption,timestamp'})
         insights_data = insights_resp['data']
-
         current_post = Instapost(post_id,
                                  _getvalue(insights_data[0]),
                                  _getvalue(insights_data[1]),

@@ -31,9 +31,9 @@ def append_html(html_data):
         htmlFile.write(html_data)
 
 
-class Heading:
-    def __init__(self, text):
-        append_html('<h3>' + text + '</h3>')
+# class Heading:
+#     def __init__(self, text):
+#         append_html('<h3>' + text + '</h3>')
 
 
 class Table:

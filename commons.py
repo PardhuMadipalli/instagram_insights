@@ -1,9 +1,8 @@
-import constant
 import pandas
 
 
-def readcsv():
-    return pandas.read_csv(constant.INSIGHTS_CSV)
+def readcsv(filename):
+    return pandas.read_csv(filename)
 
 
 def remove_element_list(input_list, to_be_removed):

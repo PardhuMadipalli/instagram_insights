@@ -7,13 +7,13 @@ import insights.htmlutils as htmlutils
 import matplotlib.pyplot as plt
 
 
-def get_best_tags(show_graphs=False, max_indices=4):
-    df = readcsv()
+def get_best_tags(csv_filename, show_graphs, max_indices):
+    df = readcsv(csv_filename)
     for metric in constant.METRICS_COLUMNS:
-        _get_best_tag_based_on(metric, df, max_indices=max_indices, show_graphs=show_graphs)
+        _get_best_tag_based_on(metric, df, max_indices, show_graphs)
 
 
-def _get_best_tag_based_on(column_name, initial_df, max_indices, show_graphs=False):
+def _get_best_tag_based_on(column_name, initial_df, max_indices, show_graphs):
     tag_avg_impressions = dict()
     df = initial_df.copy(deep=True)
     columns_without_impressions = remove_element_list(constant.DEFAULT_COLUMNS, column_name)
@@ -44,5 +44,5 @@ def _get_best_tag_based_on(column_name, initial_df, max_indices, show_graphs=Fal
 
     if show_graphs:
         plt.bar(*zip(*sorted_avg.items()))
-        plt.show()
+        plt.savefig(column_name + ".png")
     return list(sorted_avg.keys())[-1], list(sorted_avg.keys())[0]

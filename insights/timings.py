@@ -4,13 +4,13 @@ import constant
 import insights.htmlutils as htmlutils
 
 
-def get_timing_insights(max_indices=4):
-    df = readcsv()
+def get_timing_insights(csv_filename, max_indices):
+    df = readcsv(csv_filename)
     for metric in constant.METRICS_COLUMNS:
-        _get_best_timing_based_on(metric, df, max_indices=max_indices)
+        _get_best_timing_based_on(metric, df, max_indices)
 
 
-def _get_best_timing_based_on(column_name, df, max_indices=3):
+def _get_best_timing_based_on(column_name, df, max_indices):
     # corresponds to total metric value of all the posts for that particular hour
     metrics_total = np.full([24], 0, dtype=int)
 
